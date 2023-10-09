@@ -11,7 +11,7 @@ const subcategorias = {
 };
 const medicamentos = {
     "Alibio de dolor": [
-        { nombre: "Dolex 500 mg Fracción x 10 Tabletas", precio: 5.950, descripcion: "Alivia el dolor leve a moderado" },
+        { laboratorio:"pfazer", nombre: "Dolex 500 mg Fracción x 10 Tabletas", precio: 5.950, descripcion: "Alivia el dolor leve a moderado", imagen:"dolex.jpeg" },
         { nombre: "Dolex Bebés Acetaminofén 160mg/5ml Jarabe Frasco Sabor Frambuesa x 60 ml2", precio: 13.900, descripcion: "Bebés de 1 a 24 meses: Elija la dosis según el peso actual del bebé (use la edad únicamente como guía)" }
     ],
     "Dolor general": [
@@ -78,7 +78,8 @@ function mostrarMedicamentos(subcategoria) {
             const medicamentoElement = document.createElement('div');
             medicamentoElement.classList.add('medicamento');
             medicamentoElement.innerHTML = `
-                <img src="../img/banner3.png" alt="${medicamento.nombre}">
+                <img src="../img/${medicamento.imagen}" alt="${medicamento.nombre}">
+                <p>Laboratorio: ${medicamento.laboratorio}</p>
                 <p>Nombre: ${medicamento.nombre}</p>
                 <p>Precio: $${medicamento.precio}</p>
             `;
